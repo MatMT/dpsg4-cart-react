@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { books } from "../data/books";
+import { books } from "../data/data";
 import { Product } from "../types/Product";
 import ProductCard from "./ProductCard";
 import ProductModal from "./ProductModal";

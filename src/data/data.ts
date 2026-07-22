@@ -40,28 +40,28 @@ export const books: Product[] = [
   id: 6,
   title: "Pedro Páramo",
   price: 45,
-  image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Pedro_Paramo_-_first_edition_cover.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Pedro_Páramo.jpg",
   quantity: 1
 },
 {
   id: 7,
   title: "Don Quijote de la Mancha",
   price: 120,
-  image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Don_Quijote_de_la_Mancha_%281%29.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/El_Ingenioso_Hidalgo_Don_Quijote_de_La_Mancha_%281905%29_Portada_verde.jpg",
   quantity: 1
 },
 {
   id: 8,
   title: "La sombra del viento",
   price: 95,
-  image: "https://upload.wikimedia.org/wikipedia/en/0/0b/La_sombra_del_viento.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Portrait_of_Hugh_Laing%2C_in_Shadow_of_the_Wind_LCCN2004663160.jpg",
   quantity: 1
 },
 {
   id: 9,
   title: "1984",
   price: 80,
-  image: "https://upload.wikimedia.org/wikipedia/en/c/c3/1984first.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Nineteen_Eighty-Four_cover_Soviet_1984.jpg",
   quantity: 1
 },
 {
