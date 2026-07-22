@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { clearCart } from "../redux/cartSlice";
+import { clearCart, removeFromCart } from "../redux/cartSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 import "../styles/navbar.css";
@@ -39,19 +39,25 @@ export default function Navbar() {
               <>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="cart-image"
-                    />
+                    <div>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="cart-image"
+                      />
 
-                    <div className="cart-info">
-                      <p>{item.title}</p>
+                      <div className="cart-info">
+                        <p>{item.title}</p>
 
-                      <p>Cantidad: {item.quantity}</p>
+                        <p>Cantidad: {item.quantity}</p>
 
-                      <strong>${item.price * item.quantity}</strong>
+                        <strong>${item.price * item.quantity}</strong>
+                      </div>
                     </div>
+
+                    <button type="button" className="remove-button" onClick={() => dispatch(removeFromCart(item.id))}>
+                      Eliminar
+                    </button>
                   </div>
                 ))}
 
