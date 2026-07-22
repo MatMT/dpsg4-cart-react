@@ -1,34 +1,33 @@
 "use client";
 
+import { useState } from "react";
+
 import { books } from "../data/books";
-import { addToCart } from "../redux/cartSlice";
-import { useAppDispatch } from "../redux/hooks";
+import { Product } from "../types/Product";
+import ProductCard from "./ProductCard";
+import ProductModal from "./ProductModal";
 
 import "../styles/product-grid.css";
 
 export default function ProductGrid() {
-  const dispatch = useAppDispatch();
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
-    <div className="product-grid">
-      {books.map((book) => (
-        <div key={book.id} className="product-card">
-          <img src={book.image} alt={book.title} />
+    <>
+      <div className="product-grid">
+        {books.map((book) => (
+          <ProductCard
+            key={book.id}
+            product={book}
+            onOpenModal={setSelectedProduct}
+          />
+        ))}
+      </div>
 
-          <div className="product-info">
-            <h3 className="product-title">{book.title}</h3>
-
-            <p className="product-price">${book.price}</p>
-
-            <button
-              className="add-button"
-              onClick={() => dispatch(addToCart(book))}
-            >
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+    </>
   );
 }

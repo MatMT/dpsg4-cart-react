@@ -6,14 +6,17 @@ import { useAppDispatch } from "../redux/hooks";
 
 interface ProductCardProps {
   product: Product;
+  onOpenModal: (product: Product) => void;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, onOpenModal }: ProductCardProps) {
   const dispatch = useAppDispatch();
 
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.title} />
+      <button type="button" onClick={() => onOpenModal(product)}>
+        <img src={product.image} alt={product.title} />
+      </button>
 
       <div className="product-info">
         <h3 className="product-title">{product.title}</h3>
