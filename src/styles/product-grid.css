@@ -59,6 +59,13 @@
   height: 320px;
 
   object-fit: cover;
+  
+}
+
+.product-card img:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .product-info {
